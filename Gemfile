@@ -1,4 +1,4 @@
-source "https://rubygems.org"
+source "https://github.com/Raven7Z/happy_day_plugin"
 
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
