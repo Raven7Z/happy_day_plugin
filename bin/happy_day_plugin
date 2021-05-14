@@ -10,20 +10,20 @@
 # require "pry"
 # Pry.start
 
-# require 'optparse'
+require 'optparse'
 
 require 'happy_day_plugin'
+require 'happy_day_plugin/version'
 
 options = {}
  option_parser = OptionParser.new do |opts|
- 	opts.banner = "帮助信息"
+ 	opts.banner = "杰杰子帮助信息："
 
- 	options[:switch] = false
-	opts.on('-s', '--switch', 'Set options as switch') do
-		options[:switch] = true
+	opts.on('-v', '--version', '版本信息') do
+		puts "当前版本是：" + HappyDayPlugin::VERSION
 	end
 
-	opts.on('-p path', '--path path', 'search image unused with path') do |value|
+	opts.on('-p path', '--path path', '输入路径，可以排查冗余图片') do |value|
 		# HappyDayPlugin.hi(value)
 		cc = FindImage.new(value)
   		cc.find
